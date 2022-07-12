@@ -1,4 +1,3 @@
-'use strict';
+import {setup} from './src/index.js';
 
-console.log('Hello World!');
-
+setup();

@@ -6,8 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["dicoding-submission", "bookshelf-api"],
+  "keywords": [
+    "dicoding-submission",
+    "bookshelf-api"
+  ],
   "author": "Hanif Dwy Putra S <hanifdwyputrasembiring@gmail.com>",
   "license": "MIT",
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "eslint": "^8.19.0",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^2.7.1"
+  }
 }

@@ -6,7 +6,7 @@
     "scripts": {
         "postinstall": "husky install",
         "lint": "eslint \"+(src)/**/*.{cjs,js,mjs}\" --fix",
-        "format": "prettier \"**/*.{js,cjs,md,json}\" --write"
+        "format": "prettier \"**/*.{js,cjs,md,json,d.ts}\" --write"
     },
     "keywords": [
         "dicoding-submission",

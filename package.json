@@ -23,6 +23,7 @@
         "prettier": "^2.7.1"
     },
     "dependencies": {
-        "@hapi/hapi": "^20.2.2"
+        "@hapi/hapi": "^20.2.2",
+        "nanoid": "^4.0.0"
     }
 }

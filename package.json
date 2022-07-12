@@ -4,9 +4,9 @@
   "description": "Dicoding Submission - Bookshelf API",
   "main": "index.js",
   "scripts": {
-	  "postinstall": "husky install",
-	  "lint": "eslint \"+(src)/**/*.{cjs,js,mjs}\" --fix",
-	  "format": "prettier \"**/*.{js,cjs,md,json}\" --write"
+    "postinstall": "husky install",
+    "lint": "eslint \"+(src)/**/*.{cjs,js,mjs}\" --fix",
+    "format": "prettier \"**/*.{js,cjs,md,json}\" --write"
   },
   "keywords": [
     "dicoding-submission",
@@ -17,6 +17,7 @@
   "type": "module",
   "devDependencies": {
     "eslint": "^8.19.0",
+    "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^8.5.0",
     "husky": "^8.0.1",
     "prettier": "^2.7.1"

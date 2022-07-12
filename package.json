@@ -1,0 +1,13 @@
+{
+  "name": "dcd-bookshelf-api",
+  "version": "1.0.0",
+  "description": "Dicoding Submission - Bookshelf API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["dicoding-submission", "bookshelf-api"],
+  "author": "Hanif Dwy Putra S <hanifdwyputrasembiring@gmail.com>",
+  "license": "MIT",
+  "type": "module"
+}

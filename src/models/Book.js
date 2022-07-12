@@ -8,6 +8,7 @@ import {nanoid} from 'nanoid';
 export class BookModel {
     /**
      * @param {string} name - Book title.
+     * @param {number} year - Book release year.
      * @param {string} author - Book's author.
      * @param {string} summary - Book's summary.
      * @param {string} publisher - Book publisher.
@@ -17,6 +18,7 @@ export class BookModel {
      */
     constructor(
         name,
+        year,
         author,
         summary,
         publisher,
@@ -31,6 +33,7 @@ export class BookModel {
         this.pageCount = pageCount;
         this.readPage = readPage;
         this.reading = reading;
+        this.finished = this.readPage === this.pageCount;
 
         this.id = nanoid();
         this.insertedAt = new Date().toISOString();

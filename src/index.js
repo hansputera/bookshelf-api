@@ -64,6 +64,13 @@ export async function setup() {
         },
     });
 
+    // hapus buku.
+    server.route({
+        path: '/books/{bookId}',
+        method: 'DELETE',
+        handler: bookChange,
+    });
+
     await server.start();
     console.log('Server running on %s', server.info.uri);
     return;

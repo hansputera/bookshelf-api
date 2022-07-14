@@ -4,10 +4,10 @@ import Hapi from '@hapi/hapi';
 
 import {bookCreate} from './controllers/bookCreate.js';
 import {bookList} from './controllers/bookList.js';
+import {bookInfo} from './controllers/bookInfo.js';
 
 import {bookSchema} from './validators/index.js';
 import {failActionHandler} from './bit-handlers.js';
-
 /**
  * Setup/boot up the project
  * @return {Promise<void>}
@@ -36,10 +36,18 @@ export async function setup() {
         handler: bookCreate,
     });
 
+    // tampilkan semua buku.
     server.route({
         path: '/books',
         method: 'GET',
         handler: bookList,
+    });
+
+    // dapatkan informasi buku.
+    server.route({
+        path: '/books/{bookId}',
+        method: 'GET',
+        handler: bookInfo,
     });
 
     await server.start();

@@ -3,6 +3,7 @@
 /** @typedef {import('@hapi/hapi').ResponseToolkit} Response */
 
 import {BookModel} from '../models/index.js';
+import {bookStores} from '../stores.js';
 
 /** @type {ServerRoute} */
 /**
@@ -32,6 +33,8 @@ export const bookCreate = async function (req, res) {
         readPage,
         reading,
     );
+
+    bookStores.set(book.id, book);
 
     return res
         .response({

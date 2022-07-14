@@ -4,17 +4,20 @@
 
 /**
  * Fail action handler.
- * @param {Request} _ Request object.
+ * @param {Request} r Request object.
  * @param {Response} h Response object.
  * @param {Error | BoomError} err An Error.
  * @return {Promise<*>}
  */
-export const failActionHandler = async (_, h, err) => {
+export const failActionHandler = async (r, h, err) => {
     if (err.isBoom) {
         return h
             .response({
                 status: err.output.statusCode === 400 ? 'fail' : 'error',
-                message: err.message,
+                message:
+                    r.method === 'put'
+                        ? err.message.replace(/menambahkan/gi, 'memperbarui')
+                        : err.message,
             })
             .code(err.output.statusCode)
             .takeover();

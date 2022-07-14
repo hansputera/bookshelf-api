@@ -27,6 +27,7 @@ export class BookModel {
         reading = false,
     ) {
         this.name = name;
+        this.year = year;
         this.author = author;
         this.summary = summary;
         this.publisher = publisher;
@@ -38,14 +39,6 @@ export class BookModel {
         this.id = nanoid();
         this.insertedAt = new Date().toISOString();
         this.updatedAt = this.insertedAt;
-    }
-
-    /**
-     * Already finished?
-     * @return {boolean}
-     */
-    get finished() {
-        return this.readPage === this.pageCount;
     }
 
     /**

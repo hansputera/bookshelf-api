@@ -34,7 +34,13 @@ export const bookCreate = async function (req, res) {
     );
 
     return res
-        .response(JSON.stringify(book))
+        .response({
+            status: 'success',
+            message: 'Buku berhasil ditambahkan',
+            data: {
+                bookId: book.id,
+            },
+        })
         .type('application/json')
         .code(201);
 };

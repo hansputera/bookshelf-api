@@ -22,6 +22,7 @@ export async function setup() {
         },
     });
 
+    // buat buku
     server.route({
         path: '/books',
         method: 'POST',

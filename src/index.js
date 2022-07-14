@@ -3,6 +3,7 @@
 import Hapi from '@hapi/hapi';
 
 import {bookCreate} from './controllers/bookCreate.js';
+import {bookList} from './controllers/bookList.js';
 
 import {bookSchema} from './validators/index.js';
 import {failActionHandler} from './bit-handlers.js';
@@ -33,6 +34,12 @@ export async function setup() {
             },
         },
         handler: bookCreate,
+    });
+
+    server.route({
+        path: '/books',
+        method: 'GET',
+        handler: bookList,
     });
 
     await server.start();

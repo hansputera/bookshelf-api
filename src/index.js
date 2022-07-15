@@ -6,6 +6,7 @@ import {bookCreate} from './controllers/bookCreate.js';
 import {bookList} from './controllers/bookList.js';
 import {bookInfo} from './controllers/bookInfo.js';
 import {bookChange} from './controllers/bookChange.js';
+import {bookDelete} from './controllers/bookDelete.js';
 
 import {bookSchema} from './validators/index.js';
 import {failActionHandler} from './bit-handlers.js';
@@ -68,7 +69,7 @@ export async function setup() {
     server.route({
         path: '/books/{bookId}',
         method: 'DELETE',
-        handler: bookChange,
+        handler: bookDelete,
     });
 
     await server.start();

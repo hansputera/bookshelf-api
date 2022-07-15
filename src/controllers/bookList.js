@@ -12,11 +12,7 @@ import {bookStores} from '../stores.js';
  * @param {Response} res - HTTP Response.
  */
 export const bookList = async function (req, res) {
-    let books = Array.from(bookStores.values()).map((b) => ({
-        id: b.id,
-        name: b.name,
-        publisher: b.publisher,
-    }));
+    let books = Array.from(bookStores.values());
 
     if (req.query.name)
         books = books.filter((b) =>
@@ -36,7 +32,11 @@ export const bookList = async function (req, res) {
         .response({
             status: 'success',
             data: {
-                books,
+                books: books.map((b) => ({
+                    id: b.id,
+                    name: b.name,
+                    publisher: b.publisher,
+                })),
             },
         })
         .code(200);

@@ -11,4 +11,6 @@ RUN npm i pnpm -g
 RUN pnpm install
 EXPOSE 3000
 
-CMD ["NODE_ENV=production node", "index.js"]
+ENV NODE_ENV=production
+
+CMD ["node", "index.js"]

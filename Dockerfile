@@ -4,7 +4,9 @@ RUN apk update
 
 RUN mkdir -p /home/bookshelf-api
 COPY . /home/bookshelf-api
-WORKDIR /home/bookshelf-api
+WORKDIR /home/bookshelf-ap
+
+RUN npm i pnpm -g
 
 RUN pnpm install
 EXPOSE 3000

@@ -9,7 +9,7 @@ WORKDIR /home/bookshelf-api
 RUN npm i pnpm -g
 
 RUN pnpm install
-EXPOSE 3000
+EXPOSE 5000
 
 ENV NODE_ENV=production
 

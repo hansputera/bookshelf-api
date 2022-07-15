@@ -2,6 +2,7 @@
 /** @typedef {import('@hapi/hapi').Request} Request */
 /** @typedef {import('@hapi/hapi').ResponseToolkit} Response */
 
+import {identifyBool} from '../bit-handlers.js';
 import {bookStores} from '../stores.js';
 
 /** @type {ServerRoute} */
@@ -21,8 +22,15 @@ export const bookList = async function (req, res) {
         books = books.filter((b) =>
             b.name.toLowerCase().includes(req.query.name.toLowerCase()),
         );
-    if (req.query.finished) books = books.filter((b) => b.finished);
-    if (req.query.reading) books = books.filter((b) => b.reading);
+    if (req.query.finished) {
+        const onlyFinished = identifyBool(req.query.finished);
+        books = books.filter((b) => b.finished === onlyFinished);
+    }
+
+    if (req.query.reading) {
+        const onlyReading = identifyBool(req.query.reading);
+        books = books.filter((b) => b.reading === onlyReading);
+    }
 
     return res
         .response({

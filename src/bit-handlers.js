@@ -10,7 +10,7 @@
  * @return {Promise<*>}
  */
 export const failActionHandler = async (r, h, err) => {
-    if (err.isBoom) {
+    if (err && err.isBoom) {
         return h
             .response({
                 status: err.output.statusCode === 400 ? 'fail' : 'error',

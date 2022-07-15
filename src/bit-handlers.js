@@ -25,3 +25,21 @@ export const failActionHandler = async (r, h, err) => {
 
     return h.continue();
 };
+
+/**
+ * Identify boolean value.
+ * @param {any} value
+ * @return {boolean}
+ */
+export const identifyBool = (value) => {
+    switch (value) {
+        case '1':
+        case 1:
+            return true;
+        case '0':
+        case 0:
+            return false;
+        default:
+            return false;
+    }
+};

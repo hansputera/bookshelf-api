@@ -27,14 +27,14 @@ export const bookChange = async function (req, res) {
     const createdBook = book.createdAt;
 
     book = new BookModel(
-            req.payload.name,
-            req.payload.year,
-            req.payload.author,
-            req.payload.summary,
-            req.payload.publisher,
-            req.payload.pageCount,
-            req.payload.readPage,
-            req.payload.reading,
+        req.payload.name,
+        req.payload.year,
+        req.payload.author,
+        req.payload.summary,
+        req.payload.publisher,
+        req.payload.pageCount,
+        req.payload.readPage,
+        req.payload.reading,
     );
 
     book.id = req.params.bookId;

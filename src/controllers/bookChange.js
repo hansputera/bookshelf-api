@@ -12,7 +12,8 @@ import {bookStores} from '../stores.js';
  * @param {Response} res - HTTP Response.
  */
 export const bookChange = async function (req, res) {
-    const book = bookStores.get(req.params.bookId);
+    // Reuse the book.
+    let book = bookStores.get(req.params.bookId);
 
     if (!book) {
         return res
@@ -23,9 +24,9 @@ export const bookChange = async function (req, res) {
             .code(404);
     }
 
-    bookStores.set(
-        req.params.bookId,
-        new BookModel(
+    const createdBook = book.createdAt;
+
+    book = new BookModel(
             req.payload.name,
             req.payload.year,
             req.payload.author,
@@ -34,8 +35,11 @@ export const bookChange = async function (req, res) {
             req.payload.pageCount,
             req.payload.readPage,
             req.payload.reading,
-        ),
     );
+
+    book.id = req.params.bookId;
+    book.createdAt = createdBook;
+    bookStores.set(book.id, book);
 
     return res
         .response({

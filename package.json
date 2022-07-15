@@ -1,0 +1,33 @@
+{
+    "name": "dcd-bookshelf-api",
+    "version": "1.0.0",
+    "description": "Dicoding Submission - Bookshelf API",
+    "main": "index.js",
+    "scripts": {
+        "postinstall": "husky install",
+        "lint": "eslint \"+(src)/**/*.{cjs,js,mjs}\" --fix",
+        "format": "prettier \"**/*.{js,cjs,md,json,d.ts}\" --write"
+    },
+    "keywords": [
+        "dicoding-submission",
+        "bookshelf-api"
+    ],
+    "author": "Hanif Dwy Putra S <hanifdwyputrasembiring@gmail.com>",
+    "license": "MIT",
+    "type": "module",
+    "devDependencies": {
+        "eslint": "^8.19.0",
+        "eslint-config-google": "^0.14.0",
+        "eslint-config-prettier": "^8.5.0",
+        "husky": "^8.0.1",
+        "prettier": "^2.7.1"
+    },
+    "dependencies": {
+        "@hapi/hapi": "^20.2.2",
+        "joi": "^17.6.0",
+        "nanoid": "^4.0.0"
+    },
+    "engines": {
+        "node": ">=14.x"
+    }
+}
